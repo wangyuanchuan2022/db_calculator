@@ -1,0 +1,48 @@
+<MainWindow>
+    Label:
+        id: label_1
+        size_hint: 1, .1
+        text: '欢迎使用大臂计算器！'
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+        size_hint: 1, .7
+        Label:
+            id: label_2
+            text_size: root.width / 2, int(root.height * 0.7)
+            text: '66'
+        BoxLayout:
+            id: box_l
+            orientation: 'vertical'
+            spacing: 2
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+        size_hint: 1, .1
+        Button:
+            id: show_shield
+            on_press: root.show_shield()
+            text: '盾'
+        Button:
+            id: show_generator
+            on_press: root.show_generator()
+            text: '生产器'
+        Button:
+            id: restart
+            on_press: root.restart()
+            text: '重新开始'
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+        size_hint: 1, .1
+        TextInput:
+            multiline: False
+            id: txt_input
+            on_text_validate: root.send()
+            size_hint: .8,1
+            hint_text: 'move:'
+        Button:
+            id: send
+            on_press: root.send()
+            size_hint: .2,1
+            text: 'send'
